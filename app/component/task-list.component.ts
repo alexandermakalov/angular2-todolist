@@ -16,7 +16,7 @@ import {TaskService} from '../service/task.service'
     
    <ul class="task-list">
     <li *ngFor="let task of taskList; let i = index">
-       - {{i}} - {{task.name}}
+       - {{i+1}} - {{task.name}}
       <button class="delete"
         (click)="deleteTask(task._id); $event.stopPropagation()">x</button>
   </ul>
