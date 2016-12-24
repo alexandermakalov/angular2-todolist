@@ -5,7 +5,7 @@ import {TaskService} from '../service/task.service'
 @Component({
   moduleId: module.id,
   selector: 'my-task-list',
-  styleUrls:['../css/task-list.component.css'],
+  styleUrls: ['../css/task-list.component.css'],
   template: `
     <div>
       <label>Task name:</label> <input #taskName />
@@ -34,21 +34,30 @@ export class TaskListComponent implements OnInit {
   taskList: Array<TaskItem>;
 
   getTasks(): void {
-    this.taskService.getTasks().then(taskList => this.taskList = taskList).catch(this.handleError);
+    this.taskService.getTasks()
+      .subscribe(taskList => this.taskList = taskList,
+        err => this.handleError,
+        () => console.log('getTasks Complete'));
   }
 
   addTask(name: string): void {
     if (!name) {
       return;
     }
-    this.taskService.addTask(name).then(taskList => this.taskList = taskList).catch(this.handleError);
+    this.taskService.addTask(name)
+      .subscribe(taskList => this.taskList = taskList,
+        err => this.handleError,
+        () => console.log(' addTask Complete'));
   }
 
   deleteTask(taskId: string): void {
     if (!taskId) {
       return;
     }
-    this.taskService.deleteTask(taskId).then(taskList => this.taskList = taskList).catch(this.handleError);
+    this.taskService.deleteTask(taskId)
+      .subscribe(taskList => this.taskList = taskList,
+        err => this.handleError,
+        () => console.log('deleteTask Complete'));
   }
 
   private handleError(error: any): void {
