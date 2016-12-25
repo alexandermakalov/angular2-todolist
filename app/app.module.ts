@@ -1,9 +1,10 @@
 import {NgModule}       from '@angular/core';
 import {BrowserModule}  from '@angular/platform-browser';
-import {FormsModule}    from '@angular/forms';
+import {FormsModule, ReactiveFormsModule}    from '@angular/forms';
 import {AppComponent} from './app.component';
 import {HttpModule}    from '@angular/http';
 import {TaskListComponent} from "./component/task-list.component";
+import {CreateTaskComponent} from "./component/create-task.component";
 import {TaskService} from "./service/task.service";
 import {NetworkService} from "./service/network.service";
 import {AppRoutingModule} from './app-rounting.module';
@@ -12,12 +13,14 @@ import {AppRoutingModule} from './app-rounting.module';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    TaskListComponent
+    TaskListComponent,
+    CreateTaskComponent
   ],
   providers: [TaskService, NetworkService],
   bootstrap: [AppComponent]

@@ -3,9 +3,9 @@ export class TaskItem {
   public name: string;
   public description?: string;
 
-  constructor(name:string,id?:string, description?:string){
-    this._id = id;
-    this.description = description;
-    this.name = name;
+  constructor(name?: string, id?: string, description?: string) {
+    this._id = id || undefined;
+    this.description = description || '';
+    this.name = name || '';
   }
 }
