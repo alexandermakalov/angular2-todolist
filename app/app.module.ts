@@ -6,12 +6,14 @@ import {HttpModule}    from '@angular/http';
 import {TaskListComponent} from "./component/task-list.component";
 import {TaskService} from "./service/task.service";
 import {NetworkService} from "./service/network.service";
+import {AppRoutingModule} from './app-rounting.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
