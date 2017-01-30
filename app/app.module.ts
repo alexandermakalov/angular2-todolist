@@ -8,6 +8,10 @@ import {CreateTaskComponent} from "./component/create-task.component";
 import {TaskService} from "./service/task.service";
 import {NetworkService} from "./service/network.service";
 import {AppRoutingModule} from './app-rounting.module';
+import {HighlightDirective} from './component/highlight.directive';
+import {HeaderComponent} from './component/header/header.component';
+import {AppConfig} from './app.config'
+import {EventService} from "./service/event-service.service";
 
 @NgModule({
   imports: [
@@ -20,9 +24,11 @@ import {AppRoutingModule} from './app-rounting.module';
   declarations: [
     AppComponent,
     TaskListComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    HighlightDirective,
+    HeaderComponent
   ],
-  providers: [TaskService, NetworkService],
+  providers: [TaskService, NetworkService, AppConfig, EventService],
   bootstrap: [AppComponent]
 })
 

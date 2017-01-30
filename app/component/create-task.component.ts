@@ -4,13 +4,14 @@ import {TaskService} from '../service/task.service'
 import {Location} from '@angular/common';
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import {forbiddenNameValidator} from '../validator/forbidden-name.directive';
+import {AppConfig} from "../app.config";
+import {EventService} from "../service/event-service.service";
 @Component({
   moduleId: module.id,
   selector: 'my-create-task',
   styleUrls: ['../css/create-task.component.css'],
   template: `
-    <div>
-      <h1>Create task</h1>
+    <div>      
       <button (click)="goBack()">Back</button>
       <form novalidate [formGroup]="taskForm">
         <input type="text" formControlName="name"> <label>Task name </label>
@@ -56,11 +57,14 @@ export class CreateTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm();
+    this.eventService.broadcast(this.appConfig.event.changeHeader, 'create task page');
   }
 
   constructor(private taskService: TaskService,
               private location: Location,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private eventService: EventService,
+              private appConfig: AppConfig) {
   }
 
   goBack(): void {
