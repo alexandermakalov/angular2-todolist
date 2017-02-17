@@ -1,8 +1,33 @@
 .task-list {
   margin: 0 0 2em 0;
   padding-top: 1em;
+  width: 180px;
 }
 
-.task-list li{
-  padding-top: 0.5em;
+.task-list li {
+  margin-top: 0.5em;
+  list-style-type: none;
+  border: 1px solid black;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.task-list li .todo-tittle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: calc(100% - 30px);
+}
+
+.task-list li .todo-number {
+  /*background-color: white;*/
+  display: inline-block;
+}
+
+.task-list li .todo-text {
+  display: inline;
+}
+
+.task-list button.delete {
+  float: right;
 }

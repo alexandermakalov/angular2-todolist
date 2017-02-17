@@ -13,8 +13,8 @@ import {AppConfig} from "../app.config";
     <button (click)="goToCreateTask()">Create Task Page</button>
     <br>
    <ul class="task-list">
-    <li *ngFor="let task of taskList; let i = index" [myHighlight]="color" defaultColor="yellow">    
-       - {{i+1}} - {{task.name}}
+    <li *ngFor="let task of taskList; let i = index">    
+      <span class="todo-tittle"> <span class="todo-number">- {{i+1}} - </span> <span class="todo-text">{{task.name}}</span> </span>
       <button class="delete"
         (click)="deleteTask(task._id); $event.stopPropagation()">x</button>
   </ul>
@@ -22,7 +22,7 @@ import {AppConfig} from "../app.config";
 })
 
 export class TaskListComponent implements OnInit {
-  color: string = 'green';
+  color: string = 'gray';
 
   ngOnInit(): void {
     this.eventService.broadcast(this.appConfig.event.changeHeader, 'List page');
