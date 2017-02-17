@@ -1,14 +1,21 @@
 .task-list {
-  margin: 0 0 2em 0;
   padding-top: 1em;
   width: 180px;
 }
 
 .task-list li {
+  height: 18px;
   margin-top: 0.5em;
   list-style-type: none;
   border: 1px solid black;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+}
+
+.task-list li:hover {
+  color: white;
+  background-color: darkgrey;
+  left: .2em;
 }
 
 .task-list li .todo-tittle {
@@ -20,8 +27,10 @@
 }
 
 .task-list li .todo-number {
-  /*background-color: white;*/
+  border-radius: 5px 0 0 5px;
+  background-color: red;
   display: inline-block;
+  border-right: 1px solid;
 }
 
 .task-list li .todo-text {
@@ -30,4 +39,12 @@
 
 .task-list button.delete {
   float: right;
+  border-radius: 0 5px 5px 0;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  border-left: 1px solid;
 }
