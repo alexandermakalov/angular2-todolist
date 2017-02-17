@@ -10,6 +10,7 @@ import {NetworkService} from "./service/network.service";
 import {AppRoutingModule} from './app-rounting.module';
 import {HighlightDirective} from './component/highlight.directive';
 import {HeaderComponent} from './component/header/header.component';
+import {PageNotFoundComponent} from './component/page-not-found/PageNotFound'
 import {AppConfig} from './app.config'
 import {EventService} from "./service/event-service.service";
 
@@ -26,7 +27,8 @@ import {EventService} from "./service/event-service.service";
     TaskListComponent,
     CreateTaskComponent,
     HighlightDirective,
-    HeaderComponent
+    HeaderComponent,
+    PageNotFoundComponent
   ],
   providers: [TaskService, NetworkService, AppConfig, EventService],
   bootstrap: [AppComponent]
